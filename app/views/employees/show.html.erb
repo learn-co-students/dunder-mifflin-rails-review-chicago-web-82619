@@ -1,0 +1,8 @@
+<h1><%= "#{@employee.first_name} #{@employee.last_name}"  %></h1>
+<h2><%="\"#{@employee.alias}\""%></h2>
+<h2><%=@employee.title%></h2>
+<h2><%=@employee.office%></h2>
+<h2><%=@employee.dog.name%></h2>
+
+<%= link_to '<button type="button">View Employees</button>'.html_safe, employees_path %>
+<p><%= link_to '<button type="button">Edit Employee</button>'.html_safe, edit_employee_path %></p>

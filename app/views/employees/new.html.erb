@@ -1,0 +1,24 @@
+<h1>New Employee</h1>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |e| %>
+    <p><%= e %></p>
+  <% end %>
+<% end %>
+
+
+<%= form_with model: @employee do |f| %>
+    <%= f.label "First Name" %>
+    <p><%= f.text_field :first_name%></p>
+    <%= f.label "Last Name" %>
+    <p><%= f.text_field :last_name%></p>
+    <%= f.label "Alias" %>
+    <p><%= f.text_field :alias%></p>
+    <%= f.label "Title" %>
+    <p><%= f.text_field :title%></p>
+    <%= f.label "Office" %>
+    <p><%= f.text_field :office%></p>
+    <%= f.label "Dog:" %>
+    <p><%= f.collection_select(:dog_id, @dogs, :id, :name) %></p>
+    <%= f.submit %>
+<% end %>

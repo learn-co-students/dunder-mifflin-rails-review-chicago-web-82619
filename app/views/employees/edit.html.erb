@@ -1,0 +1,15 @@
+<h1>Edit Employee Info</h1>
+
+<%= form_with model: @employee do |f| %>
+    <%= f.label "First Name" %>
+    <p><%= f.text_field :first_name, value: @employee.first_name %></p>
+    <%= f.label "Last Name" %>
+    <p><%= f.text_field :last_name, value: @employee.last_name %></p>
+    <%= f.label "Title" %>
+    <p><%= f.text_field :title, value: @employee.title %></p>
+    <%= f.label "Office" %>
+    <p><%= f.text_field :office, value: @employee.office %></p>
+    <%= f.label "Dog:" %>
+    <p><%= f.collection_select(:dog_id, @dogs, :id, :name) %></p>
+    <%= f.submit %>
+  <% end %>
